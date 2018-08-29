@@ -5,7 +5,7 @@ public class Position {
 	private double hSalary;//Position Salary
 	private boolean available;//Position Availability
 	private boolean jobType; //Full Time [True] Part Time [False];
-	
+
 	public Position(String pCode, int rank, double salary, boolean availability, boolean jobType) {
 		setPositionCode(pCode);
 		setRank(rank);
@@ -53,7 +53,7 @@ public class Position {
 	public void setJobType(boolean jobType) {
 		this.jobType = jobType;
 	}
-	
+
 	/**
 	 * A method that calculates an average yearly salary.
 	 * 1. The calculation depends what type of job it is:
@@ -66,10 +66,12 @@ public class Position {
 	 * @return 
 	 */
 	public double getYearlySalary() {
-		
+
 		//Add Code Here [You have to use If/Else to get graded]
-		
-		return 0; //Temporal Return
-		
+		if(jobType)
+			return hSalary*40*4.5*12; 
+		else
+			return hSalary*20*4.5*12;
+
 	}
 }
